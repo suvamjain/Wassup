@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <FrameLayout
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:id="@+id/p_img">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/user_avatar"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/p_img"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_name"
+            android:padding="2dp"
+            android:text="Suvam Jain"
+            android:layout_marginRight="75dp"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/user_msg"
+            android:singleLine="true"
+            android:layout_below="@id/user_name"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/blue"
+            android:gravity="bottom"
+            android:text="Hey, are you coming today?"
+            android:textColor="@color/grey"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/msg_time"
+            android:padding="0dp"
+            android:text="3:14 PM"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/msg_notif"
+            android:padding="0dp"
+            android:text="3"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/lightGreen"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/user_name"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="10sp"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/user_msg"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="#dedede"/>
+    </RelativeLayout>
+
+</RelativeLayout>

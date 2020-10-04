@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="msg" type="java.lang.String"/>
+        <variable name="time" type="java.lang.String" />
+        <variable name="type" type="java.lang.String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/chat_background">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/chat_toolbar"
+            app:collapseIcon="@drawable/ic_arrow_back"
+            app:titleTextColor="@color/white"
+            android:layout_marginLeft="-8dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/goBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"/>
+
+                <ImageView
+                    android:id="@+id/user_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/user_avatar"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="Suvam Jain"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/footer"
+            android:layout_below="@id/chat_toolbar"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/item_msg_received"
+                    app:msg="@{`Hi bro wassup?`}"
+                    app:time="@{`12:45 AM`}"/>
+
+                <include
+                    layout="@layout/item_msg_sent"
+                    app:msg="@{@string/text1}"
+                    app:time="@{`1:30 AM`}"/>
+
+                <include
+                    layout="@layout/item_msg_received"
+                    app:msg="@{@string/text2}"
+                    app:time="@{`4:00 AM`}"/>
+
+                <include
+                    layout="@layout/item_msg_sent"
+                    android:visibility='@{type.length() == 4 ? View.VISIBLE : View.GONE}'
+                    app:msg="@{msg}"
+                    app:time="@{time}"/>
+
+                <include
+                    layout="@layout/item_msg_received"
+                    android:visibility='@{type.length() == 8  ? View.VISIBLE : View.GONE}'
+                    app:msg="@{msg}"
+                    app:time="@{time}"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="8dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/circle"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:drawableLeft="@drawable/ic_emoji"
+                android:drawableRight="@drawable/ic_attach"
+                android:drawableTint="@color/grey"
+                android:layout_toLeftOf="@id/image_file"
+                android:drawablePadding="8dp"
+                android:text="Type a message"/>
+
+            <ImageView
+                android:id="@+id/image_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_image"
+                android:layout_marginLeft="16dp"
+                android:layout_toLeftOf="@id/audio_msg"
+                android:tint="@color/white"/>
+
+            <ImageView
+                android:id="@+id/audio_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_audio"
+                android:tint="@color/white"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

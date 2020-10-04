@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Wassup</string>
+    <string name="search_hint">Search</string>
+    <string name="text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="text2">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="text3">Lorem ipsum 🤩</string>
+    <string name="no_search_results">No results</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#075E54</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="teal">#128C7E</color>
+    <color name="lightGreen">#25D366</color>
+    <color name="blue">#34B7F1</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#80000000</color>
+    <color name="red">#FF0000</color>
+    <color name="bubble_green">#effdde</color>
+</resources>
